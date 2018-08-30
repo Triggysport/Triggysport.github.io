@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <title>TriggySport - Never miss a bet!</title>
     <link rel="icon" href="img/favicon.png?" sizes="32x32" type="image/png">
     <!-- custom.css -->
@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	<!-- font-awesome -->
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-    
     <!-- AOS -->
     <link rel="stylesheet" href="css/aos.css">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body style="max-width: 100%; overflow-x: hidden;">
     <!-- banner -->
     <div class="jumbotron jumbotron-fluid" id="banner" style="background-image: url(img/banner-bk.jpg);">
         <div class="container text-center text-md-left">
@@ -39,7 +40,25 @@
             <p data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="lead text-white my-4">
                A betting focused live score app that allows for an easier and faster live betting experience.
             </p>
-            <a href="#" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn my-4 font-weight-bold atlas-cta cta-green">Get the app</a>
+
+            <!-- ONLY SHOW FOR DESKTOP / UNKNOWN DEVICES -->
+            <a target="_blank" href="https://itunes.apple.com/app/triggysport/id1405508155?l=en&mt=8" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn my-4 font-weight-bold atlas-cta cta-green unknown-device" style="display: none">Download for iOS</a>
+            
+            <a target="_blank" href="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40triggy/triggysport-native-a07ebd62852c009d9e67fa29cfd8817c-signed.apk" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn font-weight-bold atlas-cta cta-blue unknown-device" style="display: none">Download for Android</a>
+            
+            <!-- ONLY SHOW FOR IPHONE -->
+            <a target="_blank" href="https://itunes.apple.com/app/triggysport/id1405508155?l=en&mt=8" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn my-4 font-weight-bold atlas-cta cta-green idevice-only" style="display: none">Download for iOS</a>
+            
+            <!-- ONLY SHOW FOR ANDROID -->
+            <a id="android-download-button" target="_blank" href="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40triggy/triggysport-native-a07ebd62852c009d9e67fa29cfd8817c-signed.apk" data-aos="fade" data-aos-easing="linear" data-aos-duration="1000" data-aos-once="true" class="btn my-4 font-weight-bold atlas-cta cta-green android-only" style="display: none">Download for Android</a>
+            <p id="toggle-android-installation" class="android-only" style="text-decoration: underline; color:rgba(225,225,225,0.7); font-weight: 200; display: none;">Allow "Unknown sources" for Android</p>
+            <ul id="android-installation" style="color:rgba(225,225,225,1); font-weight: 200; text-align: left; display: none;">
+                <li>Navigate to Setting > Security.</li>
+                <li>Check the option "Unknown sources".</li>
+                <li>Tap OK on the prompt message.</li>
+                <li>Select "Trust".</li>
+            </ul>
+
         </div>
     </div>
     <!-- three-blcok -->
@@ -69,8 +88,8 @@
             <div class="row justify-content-between text-center text-md-left">
                 <div data-aos="fade-right" data-aos-duration="1000" data-aos-once="true" class="col-md-6">
                     <h2 class="font-weight-bold">Ready to try it out?</h2>
-                    <p class="my-4">TriggySport is a mobile application that's free of charge and available now on iOS. (Android coming soon).</p>
-                    <a href="#" class="btn my-4 font-weight-bold atlas-cta cta-blue">Try it now</a>
+                    <p class="my-4">TriggySport is a mobile application that's free of charge and available now on App Store for iOS. (Google Play for Android coming soon).</p>
+                    <a target="_blank" href="https://itunes.apple.com/app/triggysport/id1405508155?l=en&mt=8" class="btn my-4 font-weight-bold atlas-cta cta-blue">iOS App Store</a>
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="true" class="col-md-6 align-self-center">
                     <img src="img/appstore.png" class="mx-auto d-block">
@@ -117,6 +136,37 @@
     <script>
       AOS.init({
       });
+    </script>
+    <script>
+        /*** sniff the UA of the client and show hidden div's for that device ***/
+        var customizeForDevice = function(){
+            var ua = navigator.userAgent;
+            var checker = {
+              iphone: ua.match(/(iPhone|iPod|iPad)/),
+              blackberry: ua.match(/BlackBerry/),
+              android: ua.match(/Android/)
+            };
+            if (checker.android){
+                $('.android-only').show();
+            }
+            else if (checker.iphone){
+                $('.idevice-only').show();
+            }
+            else {
+                $('.unknown-device').show();
+            }
+        }
+
+        customizeForDevice();
+
+        $( "#toggle-android-installation" ).click(function() {
+          $( "#android-installation" ).toggle();
+        });
+
+        $( "#android-download-button" ).click(function() {
+          $( "#android-installation" ).show();
+        });
+
     </script>
 </body>
 
