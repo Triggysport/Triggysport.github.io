@@ -58,13 +58,6 @@
             
             <!-- ONLY SHOW FOR ANDROID -->
             <a id="android-download-button" target="_blank" href="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40triggy/triggysport-native-852650a97ddd9f544cc25cd7f4ca865c-signed.apk" class="btn my-4 font-weight-bold atlas-cta cta-green android-only" style="display: none">Download for Android</a>
-            <p id="toggle-android-installation" class="android-only" style="text-decoration: underline; color:rgba(225,225,225,0.7); font-weight: 200; display: none;">Allow "Unknown sources" for Android</p>
-            <ul id="android-installation" style="color:rgba(225,225,225,1); font-weight: 200; text-align: left; display: none;">
-                <li>Navigate to Setting > Security.</li>
-                <li>Check the option "Unknown sources".</li>
-                <li>Tap OK on the prompt message.</li>
-                <li>Select "Trust".</li>
-            </ul>
 
         </div>
     </div>
@@ -90,16 +83,18 @@
         </div>
     </div>
     <!-- feature (skew background) -->
-    <div class="jumbotron jumbotron-fluid feature" id="feature-first">
+    <div class="jumbotron jumbotron-fluid" id="feature-first">
         <div class="container my-5">
-            <div class="row justify-content-between text-center text-md-left">
-                <div class="col-md-6">
+            <div class="row justify-content-between text-center">
+                <div class="col-md-12">
                     <h2 class="font-weight-bold">Ready to try it out?</h2>
-                    <p class="my-4">TriggySport is a mobile application that's free of charge and available now on App Store for iOS. (Google Play for Android coming soon).</p>
-                    <a target="_blank" href="https://itunes.apple.com/app/triggysport/id1405508155?l=en&mt=8" class="btn my-4 font-weight-bold atlas-cta cta-blue">iOS App Store</a>
-                </div>
-                <div class="col-md-6 align-self-center">
-                    <img src="img/appstore.png" class="mx-auto d-block">
+                    <p class="my-4">TriggySport is a mobile application that's free of charge and available now on App Store and Google Play.</p>
+                    <a target="_blank" href="https://itunes.apple.com/app/triggysport/id1405508155?l=en&mt=8">
+                        <img src="img/appstore.png" height="50" width="172" style="display: inline; margin-bottom: 10px;">
+                    </a>
+                    <a target="_blank" href="https://itunes.apple.com/app/triggysport/id1405508155?l=en&mt=8">
+                        <img src="img/googleplay.png" height="50" width="172" style="display: inline; margin-bottom: 10px;">
+                    </a>
                 </div>
             </div>
         </div>
@@ -159,14 +154,6 @@
         }
 
         customizeForDevice();
-
-        $( "#toggle-android-installation" ).click(function() {
-          $( "#android-installation" ).toggle();
-        });
-
-        $( "#android-download-button" ).click(function() {
-          $( "#android-installation" ).show();
-        });
 
     </script>
 </body>
