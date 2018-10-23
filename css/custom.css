@@ -19,6 +19,16 @@ button {
     cursor: pointer;
 }
 
+.menu-link {
+    font-weight: 800;
+    font-size: 18px;
+    border-bottom: solid;
+}
+
+.menu-link:hover {
+    text-decoration: none;
+}
+
 .jumbotron {
     margin-bottom: 0 !important;
 }
