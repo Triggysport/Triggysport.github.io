@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Responsive Image</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .desktop-img {
+      display: none;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .mobile-img {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Desktop styles */
+    @media (min-width: 500px) {
+      .desktop-img {
+        display: block;
+      }
+    }
+
+    /* Mobile styles */
+    @media (max-width: 500px) {
+      .mobile-img {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container" id="imageContainer">
+    <img src="desktop.png" alt="Desktop Image" class="desktop-img" />
+    <img src="mobile.png" alt="Mobile Image" class="mobile-img" />
+  </div>
+    <script>
+    const imageContainer = document.getElementById("imageContainer");
+
+    imageContainer.addEventListener("click", () => {
+      // Replace this with your desired destination URL
+      window.location.href = "https://tinyurl.com/bgo123321";
+    });
+  </script>
+</body>
+</html>
