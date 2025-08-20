@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bahigo Angebot</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 90%;
+    }
+
+    .logo {
+      max-width: 200px;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge {
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      background-color: #00c300;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: #00a800;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div><img src="logo.png" alt="Bahigo Logo" class="logo" /></div>
+    <h1>WILLKOMMENSPAKET<br />BIS ZU 500 CHF</h1>
+    <button class="cta-button">Jetzt wetten ▶</button>
+  </div>
+
+  <script>
+    // 👇 Set your destination URL here
+    const redirectTo = "https://tinyurl.com/2025bcbgooch";
+
+    // Redirect user on any click on the page
+    document.body.addEventListener("click", () => {
+      window.location.href = redirectTo;
+    });
+  </script>
+</body>
+</html>
