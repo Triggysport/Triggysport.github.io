@@ -6,30 +6,27 @@
   <title>Bahigo</title>
   <style>
     html, body {
-      height: 100%;
       margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: black;
       overflow-x: hidden;        
       overscroll-behavior: none;
-      cursor: pointer; 
+      cursor: pointer;
     }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: white;
-
-      background-color: black;
-
-
+      /* Background only at top */
       background-image: url('bg.jpg');
       background-repeat: no-repeat;
-      background-size: 100% auto;
       background-position: top center;
+      background-size: 100% auto;
     }
 
     @media (max-width: 669px) {
       body {
-        background-image: url('bg-mobile.jpg'); /* mobile background */
+        background-image: url('bg-mobile.jpg');
       }
     }
 
@@ -78,7 +75,6 @@
       bottom: 0;
       left: 0;
     }
-
   </style>
 </head>
 <body>
@@ -86,27 +82,36 @@
     <div class="logoWrapper">
       <img src="logo.svg" height="40px" />
     </div>
+
     <iframe
       class="iframe1"
       src='https://w.triggy.ai?id=e55536cd-f1a1-460c-bf40-80c3374a8cf3&language=de&country=DE&locale=de-DE'>
     </iframe>
+
     <h1>WILKOMMENSPAKET BIZ ZU 500 CHF</h1>
     <div class="button">Jetzt wetten</div>
+
     <img
       style="width: 100%; margin-top: 40px;"
       src="step-by-step.png"
     />
+
     <img
       style="width: 100%; margin-top: 200px;"
       src="footer.jpg"
     />
-    <p style="font-size: 8px; margin-top:5px">© 2025 Bahigo. Alle Rechte vorbehalten.</p>
+
+    <p style="font-size: 8px; margin-top:5px">
+      © 2025 Bahigo. Alle Rechte vorbehalten.
+    </p>
   </div>
+
   <iframe
     class="iframe2"
     src='https://w.triggy.ai?id=6936777e-d07b-48de-bb26-2f2576e40a89&language=de&country=DE&locale=de-DE'>
   </iframe>
-    <script>
+
+  <script>
     document.addEventListener("click", function () {
       window.location.href = "https://www.bahigo.com/"; 
     });
